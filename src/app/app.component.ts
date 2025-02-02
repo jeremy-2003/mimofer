@@ -21,7 +21,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.showMenu = event.url !== '/login';
+        console.log("URL detectada:", event.urlAfterRedirects); // <-- Usamos urlAfterRedirects
+        this.showMenu = !event.urlAfterRedirects.startsWith('/login');
       }
     });
   

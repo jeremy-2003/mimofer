@@ -8,14 +8,14 @@ import { CartaComponent } from './carta/carta.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent }, // Página principal
-  { path: 'recuerdos', component: RecuerdosComponent }, // Página de Recuerdos
-  { path: 'trivia', component: TriviaComponent }, // Página de Trivia
-  { path: 'puzzle', component: PuzzleComponent }, // Página del Puzzle
-  { path: 'carta', component: CartaComponent }, // Página de la Carta Virtual
-  { path: 'login', component: LoginComponent }, // Página de Login
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirige a /login
+  { path: 'login', component: LoginComponent },
+  { path: 'recuerdos', component: RecuerdosComponent },
+  { path: 'trivia', component: TriviaComponent },
+  { path: 'puzzle', component: PuzzleComponent },
+  { path: 'carta', component: CartaComponent },
   { path: 'home', component: HomeComponent },
-  { path: '**', redirectTo: ''},
+  { path: '**', redirectTo: 'login' } // Cualquier otra ruta redirige a /login
 ];
 
 @NgModule({
