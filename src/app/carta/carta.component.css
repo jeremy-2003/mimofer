@@ -1,0 +1,44 @@
+/* carta.component.css */
+
+html, body {
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+    height: 100%; /* Altura completa */
+}
+
+body {
+    background: linear-gradient(to bottom, #4b0082, #121212); /* Gradiente de fondo */
+    display: flex;
+    height: 100vh; /* Altura completa */
+    overflow: hidden; /* Ocultar desplazamiento */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    color: white; /* Color del texto */
+    font-family: 'Dancing Script', cursive; /* Fuente romántica */
+}
+
+/* carta.component.css */
+
+.pergamino {
+    width: 80%; /* Ancho del pergamino */
+    height: 80%; /* Altura del pergamino */
+    background: rgba(255, 255, 255, 0.1); /* Fondo blanco semitransparente */
+    border: 2px solid #e4c6b3; /* Borde que simula papel */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para efecto de profundidad */
+    overflow: hidden; /* Ocultar el scroll */
+    position: relative; /* Posición relativa para el scroll */
+    overflow-y: auto; /* Permitir scroll vertical */
+}
+
+.texto {
+    white-space: pre-wrap; /* Mantener saltos de línea */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    opacity: 0; /* Comienza oculto para la animación */
+    transition: opacity 0.5s ease-in-out; /* Transición de opacidad */
+}
+
+.pergamino::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar */
+}

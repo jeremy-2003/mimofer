@@ -1,0 +1,96 @@
+.app-container {
+    font-family: Arial, sans-serif;
+    position: absolute;
+    height: 100%;
+    width: 100%; /* Asegura que ocupe todo el alto */
+    overflow: hidden;
+}
+
+/* Botón del menú hamburguesa */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+/* Icono del menú hamburguesa */
+.hamburger-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #9932cc; /* Cambia el color a blanco */
+    margin: 5px 0;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%; /* Asegura que cubra toda la altura */
+    background-color: #121212; /* Color de fondo */
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    padding-top: 60px; /* Ajusta según sea necesario */
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    margin: 0; /* Elimina cualquier margen */
+    padding: 0; /* Elimina cualquier padding no deseado */
+}
+
+/* Menú abierto */
+.menu.open {
+    left: 0;
+}
+
+/* Lista de navegación */
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Color blanco para el texto */
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Estilo del enlace en hover */
+.menu ul li a:hover {
+    background-color: #4b3c7a; /* Un morado más claro al pasar el mouse */
+    color: #fff; /* Mantener el texto blanco */
+}
+
+/* Espacio del contenido principal */
+main {
+    margin-left: 0; /* Sin margen por defecto */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Ajustar el contenido cuando el menú está abierto */
+.menu-open {
+    margin-left: 250px; /* Empuja el contenido en pantallas más grandes */
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .menu {
+        position: fixed; /* Se superpone en móviles */
+    }
+
+    .menu-open {
+        margin-left: 0; /* No empujar el contenido en móviles */
+    }
+}

@@ -1,0 +1,206 @@
+html, body {
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+    height: 100%; /* Altura completa */
+}
+
+body {
+    background: linear-gradient(to bottom, #4b0082, #121212); /* Gradiente de fondo */
+    display: flex;
+    height: 100vh; /* Altura completa */
+    overflow: hidden; /* Ocultar desplazamiento */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    color: white; /* Color del texto */
+    font-family: 'Dancing Script', cursive; /* Fuente romántica */
+}
+
+.puzzle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(18, 18, 18, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Ajustes en pantallas grandes */
+@media (min-width: 768px) {
+  .puzzle-container {
+      flex-direction: row;
+      max-width: 2000px;
+      padding: 30px;
+      gap: 30px;
+  }
+}
+
+h2 {
+  color: #9932cc;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Contenedor para imagen y puzzle */
+.puzzle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .puzzle-content {
+      flex-direction: row;
+      gap: 20px;
+  }
+}
+
+.reference-image {
+  width: 100%; /* Ocupa todo el ancho disponible en móviles */
+  max-width: 500px; /* Ancho máximo en pantallas grandes */
+  height: auto; /* Altura automática para mantener la proporción */
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #9932cc;
+}
+
+.reference-image img {
+  width: 100%;
+  height: auto; /* Ajusta la altura automáticamente */
+  object-fit: contain; /* Para que la imagen no se recorte */
+  display: block;
+}
+
+/* Estilo adicional para pantallas grandes */
+@media (min-width: 768px) {
+  .reference-image {
+      width: 220px; /* Ajusta el ancho para pantallas grandes */
+      height: 165px; /* Asegúrate de mantener la proporción */
+  }
+}
+
+
+/* Rompecabezas */
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 0px;
+  background-color: #4b0082;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .puzzle-grid {
+      grid-template-columns: repeat(3, 140px);
+      grid-template-rows: repeat(3, 140px);
+      gap: 6px;
+      padding: 15px;
+  }
+}
+
+/* Piezas del rompecabezas */
+.puzzle-piece {
+  width: 100px;
+  height: 100px;
+  background-size: 360px 360px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.puzzle-piece:hover {
+  transform: scale(1.05);
+}
+
+.empty-piece {
+  background-color: transparent;
+  cursor: default;
+  border: none;
+}
+
+/* Mensaje de éxito */
+.mensaje-felicitaciones {
+  background: #6a0dad;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+/* Botón */
+button {
+  background: #9932cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #6a0dad;
+}
+
+/* Ajuste del botón en pantallas grandes */
+@media (min-width: 768px) {
+  button {
+      margin-top: 20px;
+      font-size: 20px;
+      padding: 14px 28px;
+  }
+}
+
+/* Estilo del contenedor del popup */
+.popup {
+  position: fixed; /* Fijo para ocupar toda la ventana */
+  top: 0; /* Posición en la parte superior */
+  left: 0; /* Posición a la izquierda */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  display: flex; /* Usar flex para centrar contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+/* Estilo del contenido del popup */
+.popup-content {
+  background: rgba(18, 18, 18, 0.9); /* Fondo oscuro para el contenido */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Sombra */
+  text-align: center; /* Centrar texto */
+  max-width: 400px; /* Ancho máximo */
+  width: 90%; /* Ancho del popup */
+  color: white; /* Color del texto */
+}
+
+/* Estilo del botón */
+.button {
+  background: #9932cc; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 12px 24px; /* Espaciado */
+  font-size: 18px; /* Tamaño de fuente */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  margin-top: 15px; /* Espaciado superior */
+  transition: background 0.3s; /* Transición suave */
+}
+
+.button:hover {
+  background: #6a0dad; /* Color del botón al pasar el cursor */
+}

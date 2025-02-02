@@ -1,0 +1,28 @@
+<body>
+    <div class="trivia-container" *ngIf="!triviaFinalizada">
+        <h1>Trivia 💡</h1>
+        <div class="question-box">
+          <p class="question">{{ preguntas[preguntaActual].pregunta }}</p>
+        </div>
+        <div class="options">
+          <button *ngFor="let opcion of preguntas[preguntaActual].opciones" (click)="seleccionarRespuesta(opcion)" class="option-button">
+            {{ opcion }}
+          </button>
+        </div>
+      </div>
+      
+      <!-- Popup de resultados -->
+      <div class="popup" *ngIf="mostrarPopup">
+        <div class="popup-content">
+          <h2>Resultados 🎉</h2>
+          <p><strong>Aciertos:</strong> {{ porcentajeAciertos }}%</p>
+      
+          <h3>Resumen:</h3>
+          <p class="resumen">{{ resumenRespuestas.join(' | ') }}</p>
+          <p *ngIf="porcentajeAciertos === 100">Ahora puedes revisar el menu se desbloqueo una nueva opcion jeje cada ves estas mas cerca de poder llegar a la parte final</p>
+          <p *ngIf="porcentajeAciertos != 100">Tienes que seguir intentato bebe para desbloquear la siguiente opcion tienes que llegar al 100%</p>
+          <button (click)="cerrarPopup()" class="button">Cerrar</button>
+        </div>
+      </div>
+      
+</body>

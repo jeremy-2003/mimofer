@@ -1,0 +1,32 @@
+<body>
+  <div class="puzzle-container">
+    <h2>🧩 Arma el Puzzle 🧩</h2>
+    
+    <div class="reference-image">
+      <img [src]="imagenSrc" alt="Imagen de referencia" />
+    </div>
+  
+    <div class="puzzle-grid">
+      <div
+        *ngFor="let valor of piezas; let i = index"
+        class="puzzle-piece"
+        [ngClass]="{'empty-piece': valor === 0}"
+        [ngStyle]="{
+          'background-image': obtenerBackgroundImage(valor),
+          'background-position': calcularPosicion(valor)
+        }"
+        (click)="intercambiarPiezas(i)">
+      </div>
+    </div>
+  
+    <div class="popup" *ngIf="mostrarPopup">
+      <div class="popup-content">
+        <h2>🎉 ¡Felicidades! 🎉</h2>
+        <p>Has completado el puzzle.</p>
+        <button (click)="cerrarPopup()" class="button">Cerrar</button>
+      </div>
+    </div>
+  
+    <button (click)="iniciarPuzzle()">🔄 Reiniciar Puzzle</button>
+  </div>
+</body>

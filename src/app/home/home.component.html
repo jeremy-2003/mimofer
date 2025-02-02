@@ -1,0 +1,32 @@
+<body>
+    <br>
+    <div *ngIf="!countdownEnd" class="home-container"> <!-- Mostrar solo si countdownEnd es false -->
+        <h1 class="welcome-message">Jeje Hola bebe, recibirás esto antes de nuestro aniversario si estás aquí es porque ya descifraste el usuario y contraseña.</h1>
+        <p class="description">Ahora lo único que queda es esperar. Sé paciente amor, espero te guste ❤💜</p>
+        
+        <div class="countdown-timer">
+            <h2>Tiempo restante para nuestra fecha:</h2>
+            <p>{{ countdown }}</p> <!-- Muestra el contador si no ha llegado a 0 -->
+        </div>
+    </div>
+
+    <div *ngIf="countdownEnd" class="celebration-container"> <!-- Mostrar solo si countdownEnd es true -->
+        <h1>Pues ya llego la hora morshy hoy cumplimos 2 meses juntos</h1>
+        <p class="celebration-message">¡Feliz aniversario de 2 meses! 🎉</p>
+        <p class="intro-message">
+            Bueno jejeje llego la hora es hoy pues esto es una sorpresa un regalo para ti bebe. Espero te guste aqui podras encontrar algunas fotitos
+            unos jueguitos, preguntas y el punto es recordar momentos especiales juntos jeje. Te quiero 💜
+        </p>
+        
+        <div class="image-gallery">
+            <img src="assets/img/image3.JPEG" class="celebration-image horizontal" alt="Celebración" />
+            <img src="assets/img/image2.JPEG" class="celebration-image vertical" alt="Vertical" />            
+        </div>
+        
+        <p class="intro-message">
+            Revisa el menu tienes nuevas opciones morshy espero te diviertas con cada una de las opciones y te gusten
+        </p>
+    </div>
+    
+    
+</body>

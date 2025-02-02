@@ -1,0 +1,147 @@
+html, body {
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+    height: 100%; /* Altura completa */
+}
+
+body {
+    background: linear-gradient(to bottom, #4b0082, #121212); /* Gradiente de fondo */
+    display: flex;
+    height: 100vh; /* Altura completa */
+    overflow: hidden; /* Ocultar desplazamiento */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    color: white; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Fuente */
+}
+
+.home-container {
+    background-color: rgba(18, 18, 18, 0.9); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Sombra */
+    text-align: center; /* Centrar texto */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    width: 90%; /* Ancho responsive del contenedor */
+}
+
+.welcome-message {
+    font-size: 2.5em; /* Tamaño de fuente grande */
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2em; /* Tamaño de fuente para la descripción */
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7); /* Texto blanco con opacidad */
+}
+
+.countdown-timer {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.9); /* Color del texto */
+}
+
+.countdown {
+    font-weight: bold; /* Resaltar el contador */
+    font-size: 2em; /* Tamaño de fuente mayor */
+    margin-top: 10px;
+}
+
+.explore-button {
+    background-color: #9932cc; /* Color del botón */
+    color: white; /* Texto blanco en el botón */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1em; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave al cambiar color */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.explore-button:hover {
+    background-color: #6a0dad; /* Color de fondo al pasar el mouse */
+}
+
+.intro-message {
+    font-size: 1.2em; /* Tamaño de fuente para la introducción */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    color: rgba(255, 255, 255, 0.8); /* Color del texto */
+}
+
+.celebration-container {
+    background-color: rgba(18, 18, 18, 0.9); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Sombra */
+    text-align: center; /* Centrar texto */
+    margin: 0 20px; /* Márgenes horizontales */
+}
+
+.image-gallery {
+    display: flex; /* Utilizar flexbox para alinear las imágenes */
+    justify-content: center; /* Centrar las imágenes */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin-top: 20px; /* Espacio superior */
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en varias filas si es necesario */
+}
+
+.celebration-image {
+    height: auto; /* Mantener la proporción de aspecto */
+    border-radius: 8px; /* Bordes redondeados en las imágenes */
+    box-shadow: 0 4px 16px rgba(31, 38, 135, 0.2); /* Sombra en las imágenes */
+    display: none; /* Ocultar por defecto */
+}
+.celebration-image.vertical {
+    max-width: 40%; /* Ajustar el ancho máximo para imágenes horizontales */
+    width: auto; /* Permitir que el ancho se ajuste automáticamente */
+}
+.celebration-image.horizontal {
+    max-width: 80%; /* Imágenes verticales ocupan el 100% del contenedor en móviles */
+}
+/* Media query para dispositivos móviles */
+@media (min-width: 768px) {
+    .celebration-container {
+        padding: 20px; /* Espaciado interno menor en móviles */
+        margin: 0 10px; /* Márgenes horizontales menores en móviles */
+    }
+
+    .intro-message {
+        font-size: 0.9em; /* Ajustar tamaño de fuente en móviles */
+    }
+    .celebration-image {
+        max-width: 100%;
+    }
+    .celebration-image.horizontal {
+        display: none; 
+    }
+    .celebration-image.vertical {
+        display: block;
+    }
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 15px; /* Espaciado interno menor en móviles */
+    }
+
+    .welcome-message {
+        font-size: 1.8em; /* Tamaño de fuente ajustado para móviles */
+    }
+
+    .description {
+        font-size: 1em; /* Tamaño de fuente ajustado para móviles */
+    }
+
+    .countdown {
+        font-size: 1.5em; /* Tamaño de fuente ajustado para móviles */
+    }
+    .celebration-image.horizontal {
+        display: block; 
+    }
+    .celebration-image.vertical {
+        display: none; 
+    }
+}
