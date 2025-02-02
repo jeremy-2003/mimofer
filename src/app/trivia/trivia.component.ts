@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
 })
 export class TriviaComponent {
   preguntas = [
-    { pregunta: '¿Cuando fue la primera salida que tuvimos juntos?', opciones: ['Rojo', 'Azul', 'Morado', 'Verde'], respuesta: 'Morado' },
-    { pregunta: '¿Como se llama el primer restaurante que fuimos?', opciones: ['10 de enero', '28 de diciembre', '3 de febrero', '14 de febrero'], respuesta: '28 de diciembre' },
-    { pregunta: '¿Cual fue el recorrido de nuestra primera cita?', opciones: ['Perfect - Ed Sheeran', 'A Thousand Years - Christina Perri', 'Stand by Me - Ben E. King', 'Love Me Like You Do - Ellie Goulding'], respuesta: 'Perfect - Ed Sheeran' }
+    { pregunta: '¿Cuando fue la primera salida que tuvimos solo los 2 juntos?', opciones: ['31/08/2024', '30/08/2024', '17/07/2024', '31/08/2024'], respuesta: '31/08/2024' },
+    { pregunta: '¿Como se llama el primer restaurante que fuimos?', opciones: ['Mi Sociedad Privada', 'Mi Propiedad Privada', 'Mercado Aviacion', 'Museo Laco'], respuesta: 'Mercado Aviacion' },
+    { pregunta: '¿Cual fue el recorrido de nuestra primera cita?', opciones: ['Plaza SM->Bolos->Almuerzo->Bailar->Comprar', 'Plaza SM->Comprar->Almuerzo->Bailar->Bolos', 'Plaza SM->Comprar->Almuerzo->Bolos->Bailar', 'Plaza SM->Bolos->Almuerzo->Comprar->Bailar'], respuesta: 'Plaza SM->Comprar->Almuerzo->Bolos->Bailar' }
   ];
 
   preguntaActual = 0;
