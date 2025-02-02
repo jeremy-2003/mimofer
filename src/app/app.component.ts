@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       }
     });
   
-    this.startCountdown(new Date('2025-01-03T00:00:00'));
+    this.startCountdown(new Date('2025-02-03T00:00:00'));
   
     this.triviaService.triviaCompletada$.subscribe((completada) => {
       this.triviaCompleted = completada; // Actualiza la UI en tiempo real

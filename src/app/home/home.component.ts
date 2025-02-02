@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.startCountdown(new Date('2025-01-03T00:00:00'));
+    this.startCountdown(new Date('2025-02-03T00:00:00'));
   }
 
     startCountdown(endTime: Date) {
